@@ -1,1 +1,1 @@
-
+This folder contains MATLAB scripts for statistical analysis of ROI-based connectivity measures. Implemented analyses include condition contrasts, time-window comparisons, laterality indices, and cluster-based permutation testing.
