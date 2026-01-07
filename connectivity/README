@@ -1,1 +1,1 @@
-
+This folder contains MATLAB scripts for computing source-level functional connectivity metrics from ROI time series. Implemented measures include weighted Phase Lag Index (wPLI) and Phase Slope Index (PSI) across multiple frequency bands.
