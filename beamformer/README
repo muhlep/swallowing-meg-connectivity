@@ -1,1 +1,1 @@
-
+This folder contains MATLAB scripts implementing LCMV beamformer source reconstruction using FieldTrip. The beamformer is applied to epoched MEG data to obtain source-level time series suitable for ROI-based connectivity analysis.
