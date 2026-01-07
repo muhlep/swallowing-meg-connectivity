@@ -1,1 +1,1 @@
-
+This folder contains MATLAB scripts for trial definition and basic preprocessing of CTF MEG data using FieldTrip. Trials are defined based on externally marked event triggers (e.g., EMG-related events) and prepared for subsequent source-level analysis.
