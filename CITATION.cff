@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: >
+  If you use this software or parts of the analysis pipeline in your research,
+  please cite it using the following reference.
+
+title: "Source-level MEG connectivity analysis of swallowing"
+abstract: >
+  MATLAB/FieldTrip-based pipeline for source-level MEG connectivity analysis
+  of swallowing. The pipeline supports end-to-end processing from raw CTF
+  MEG datasets to ROI-level functional and directed connectivity metrics
+  (wPLI, PSI), including group-level statistics and cluster-based
+  permutation testing.
+
+authors:
+  - family-names: Muhle
+    given-names: Paul
+
+repository-code: "https://github.com/PaulMuhle/swallowing-meg-connectivity"
+
+keywords:
+  - MEG
+  - connectivity
+  - FieldTrip
+  - MATLAB
+  - beamforming
+  - wPLI
+  - PSI
+  - swallowing
+  - neuroimaging
+  - CTF
+
+license: MIT
+
+version: 1.0.0
+
+date-released: 2026-01-06
