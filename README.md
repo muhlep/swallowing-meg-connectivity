@@ -1,11 +1,11 @@
 # swallowing-meg-connectivity
-MATLAB/FieldTrip pipeline for source-level MEG connectivity analysis of swallowing
+MATLAB / FieldTrip pipeline for source-level MEG connectivity analysis of swallowing
 
 # Source-level MEG Connectivity Analysis Pipeline
 
 This repository contains MATLAB scripts implementing a complete source-level MEG connectivity analysis pipeline based on FieldTrip. The pipeline is designed for data recorded on CTF MEG systems and enables the estimation of frequency-specific functional and directed connectivity between cortical regions of interest (ROIs).
 
-The code supports end-to-end processing starting from raw MEG datasets and culminates in group-level statistical analyses and visualization of large-scale cortical networks.
+The code supports end-to-end processing starting from raw MEG datasets and culminates in group-level statistical analyses of large-scale cortical networks.
 
 ---
 
@@ -16,26 +16,29 @@ The pipeline implements the following main analysis steps:
 1. **Trial Definition and Preprocessing**
    - Raw MEG data recorded on CTF systems (`.ds` format)
    - Trials defined based on manually marked event triggers
-   - Analysis focuses on EMG2 (active condition) and EMG3 (control condition)
+   - Analysis focuses on EMG2 (active swallowing condition) and EMG3 (control condition)
+   - Optional band-pass filtering and line-noise removal
 
 2. **Source Reconstruction**
    - Linearly Constrained Minimum Variance (LCMV) beamformer
-   - Source-level time series reconstructed using FieldTrip
-   - Fixed orientation source estimates
+   - Source reconstruction performed using FieldTrip
+   - Fixed-orientation source estimates on a warped MNI grid
 
-3. **ROI Time Series Extraction**
-   - Aggregation of source estimates within predefined cortical ROIs
-   - Generation of representative ROI-level time series
+3. **ROI-Level Signal Extraction**
+   - ROI-level time series are computed internally during beamforming
+   - Source estimates are aggregated across predefined cortical ROIs
+   - No standalone ROI time-series extraction module is provided
 
 4. **Connectivity Analysis**
-   - Weighted Phase Lag Index (wPLI)
-   - Phase Slope Index (PSI)
-   - Frequency-specific analysis across standard bands (theta, alpha, beta, low gamma, high gamma)
+   - Weighted Phase Lag Index (wPLI) for undirected functional connectivity
+   - Phase Slope Index (PSI) for directed connectivity
+   - Frequency-specific analysis across standard bands:
+     - theta, alpha, beta, low gamma, high gamma
 
 5. **Statistical Analysis**
-   - Condition contrasts and time-window comparisons
+   - Group-level contrasts (EMG2 vs. EMG3)
    - Laterality indices
-   - Cluster-based permutation testing
+   - Cluster-based permutation testing (CBPT) at the ROI × ROI level
 
 ---
 
@@ -53,14 +56,13 @@ The pipeline implements the following main analysis steps:
 - **MATLAB**
 - **FieldTrip** (tested with version **2023-12-20**)
 
-FieldTrip must be installed and correctly added to the MATLAB path prior to running the scripts.
+FieldTrip must be installed and added to the MATLAB path prior to running the scripts.
 
 ---
 
 ## Repository Structure
 - preprocessing/     Trial definition and preprocessing
-- beamformer/        LCMV beamformer source reconstruction
-- roi_timeseries/    ROI-level source time series extraction
+- beamformer/        LCMV beamformer source reconstruction and ROI aggregation
 - connectivity/      wPLI and PSI connectivity analysis
 - statistics/        Statistical analysis and permutation testing
 
@@ -80,6 +82,8 @@ Each subfolder contains a dedicated `README.md` describing its role within the p
 
 If you use this code or parts of the analysis pipeline in your work, please cite:
 
-- Oostenveld et al., 2011. *FieldTrip: Open Source Software for Advanced Analysis of MEG, EEG, and Invasive Electrophysiological Data*. Computational Intelligence and Neuroscience.
+Oostenveld, R., Fries, P., Maris, E., & Schoffelen, J.-M. (2011).  
+*FieldTrip: Open Source Software for Advanced Analysis of MEG, EEG, and Invasive Electrophysiological Data*.  
+Computational Intelligence and Neuroscience, 2011, Article ID 156869.
 
 Additional methodological citations should follow the corresponding primary publications.
