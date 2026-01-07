@@ -1,1 +1,1 @@
-
+This folder contains MATLAB scripts for extracting ROI-level source time series from beamformer output. Source estimates are aggregated within predefined cortical regions to generate representative ROI time series for connectivity analysis.
