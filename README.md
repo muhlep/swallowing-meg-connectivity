@@ -58,11 +58,11 @@ FieldTrip must be installed and correctly added to the MATLAB path prior to runn
 ---
 
 ## Repository Structure
-preprocessing/     Trial definition and preprocessing
-beamformer/        LCMV beamformer source reconstruction
-roi_timeseries/    ROI-level source time series extraction
-connectivity/      wPLI and PSI connectivity analysis
-statistics/        Statistical analysis and permutation testing
+**preprocessing/     Trial definition and preprocessing**
+**beamformer/        LCMV beamformer source reconstruction**
+**roi_timeseries/    ROI-level source time series extraction**
+**connectivity/      wPLI and PSI connectivity analysis**
+**statistics/        Statistical analysis and permutation testing**
 
 Each subfolder contains a dedicated `README.md` describing its role within the pipeline.
 
